@@ -14,7 +14,7 @@ fig1=px.bar(df,x='Attack_Type', y='Previous_Incidents',
            template='plotly_dark'
 )
 st.plotly_chart(fig1) 
-st.markdown("shows which attack (eg:ransomware, phishing) is most common")
+st.subheader("shows which attack (eg:ransomware, phishing) is most common")
 
 #Bar chart - attack vector frequeny
 fig2=px.bar(df,x='Attack_Vector', y='Previous_Incidents',
@@ -24,7 +24,7 @@ fig2=px.bar(df,x='Attack_Vector', y='Previous_Incidents',
                   template='plotly_dark'
 )
 st.plotly_chart(fig2)
-st.markdown("highlights weak entry points like email,web apps,unpatched systems.")
+st.subheader("highlights weak entry points like email,web apps,unpatched systems.")
 
 
 #stacked bar chart - industry vs attack type
@@ -34,7 +34,7 @@ fig3=px.bar(df, x='Industry',y='Previous_Incidents',
                  template='plotly_dark'
 )
 st.plotly_chart(fig3)
-st.markdown("shows which industries are most affected by which attacks.")
+st.subheader("shows which industries are most affected by which attacks.")
 
 
 #timeline
@@ -42,7 +42,7 @@ fig4=px.line(df,x='Date_Reported',y='Previous_Incidents',
                  title='incidents by date_reported'
 )
 st.plotly_chart(fig4)
-st.markdown("identifies spikes in attacks during specific months.")
+st.subheader("identifies spikes in attacks during specific months.")
 
 
 #records compromised by industry
@@ -52,12 +52,12 @@ fig5=px.bar(df,x='Industry',y='Records_Compromised',
             template='plotly_dark'
 )
 st.plotly_chart(fig5)
-st.markdown("reveals which industries leak the most customer data")
+st.subheader("reveals which industries leak the most customer data")
 
 fig6=px.box(df, x='Attack_Type', y='Financial_Impact_Million_USD'
 )
 st.plotly_chart(fig6)
-st.markdown("compares how costly diffrent types of attacks are.")
+st.subheader("compares how costly diffrent types of attacks are.")
 
 
 #avearge recovery time by industry
@@ -66,7 +66,7 @@ fig7=px.bar(df,x='Industry',y='Recovery_Time_Days',
             color_discrete_sequence=["#008779"],
 )
 st.plotly_chart(fig7)
-st.markdown("shows which sectors recover quickly vs take longest")
+st.subheader("shows which sectors recover quickly vs take longest")
 
 
 #ransom amount vs recovery time
@@ -75,7 +75,7 @@ fig8=px.scatter(df,x='Ransom_Amount_USD',y='Recovery_Time_Days',
                 size='Recovery_Time_Days'
 )
 st.plotly_chart(fig8)
-st.markdown("check if higher ransom demands correlate with longer downtime.")
+st.subheader("check if higher ransom demands correlate with longer downtime.")
 
 
 #barchart incident severity and records compromised
@@ -84,7 +84,7 @@ fig9=px.bar(df,x='Incident_Severity',y='Records_Compromised',
             color_discrete_sequence=["#008779"],
 )
 st.plotly_chart(fig9)
-st.markdown("higher severity more record stolen.")
+st.subheader("higher severity more record stolen.")
 
 
 #bar chart patch status vs average severity
@@ -93,7 +93,7 @@ fig10=px.bar(df,x='Patch_Status',y='Incident_Severity',
             color_discrete_sequence=["#CA12F3"],
 )
 st.plotly_chart(fig10)
-st.markdown("confirms wheather poor patching increases severity.")
+st.subheader("confirms wheather poor patching increases severity.")
 
 
 # MFA enabled vs incident severity
@@ -103,7 +103,7 @@ fig11=px.bar(df,x='MFA_Enabled',y='Incident_Severity',
             color_discrete_sequence=["#C51989"],
 )
 st.plotly_chart(fig11)
-st.markdown("shows if MFA adoption reduces severity.")
+st.subheader("shows if MFA adoption reduces severity.")
 
 
 #scatter plot security budget vs financial impact
@@ -112,7 +112,7 @@ fig12=px.scatter(df, x='Security_Budget_Million_USD',y='Financial_Impact_Million
                  size='Recovery_Time_Days'
 )
 st.plotly_chart(fig12)
-st.markdown("checks if bigger budgets actually reduce costs of incidents.")
+st.subheader("checks if bigger budgets actually reduce costs of incidents.")
 
 
 #barchart ciso prescence vs recovery time
@@ -123,7 +123,7 @@ fig13=px.bar(df,x='CISO_Present',y='Recovery_Time_Days',
              template='plotly_dark'
 )
 st.plotly_chart(fig13)
-st.markdown("reveals if having a CISO shortens recovery")
+st.subheader("reveals if having a CISO shortens recovery")
 
 
 #scatter plot - training hours vs customer churn
@@ -132,7 +132,7 @@ fig14=px.scatter(df,x='Security_Training_Hours',y='Customer_Churn_Percent',
        size='Security_Training_Hours'
 )
 st.plotly_chart(fig14)
-st.markdown("higher training - lower chunk or not ")
+st.subheader("higher training - lower chunk or not ")
 
 
 #bar chart - regulatory fines by industry
@@ -143,7 +143,7 @@ fig15=px.bar(df,x='Industry',y='Regulatory_Fine_Million_USD',
              template='plotly_dark'
 )
 st.plotly_chart(fig15)
-st.markdown("shows which sector face the heaviest penalties.")
+st.subheader("shows which sector face the heaviest penalties.")
 
 
 #scatter plot - stock impact % vs inancial impact
@@ -152,7 +152,7 @@ fig16=px.scatter(df,x='Financial_Impact_Million_USD',y='Stock_Impact_Percent',
              size='Security_Training_Hours'
 )
 st.plotly_chart(fig16)
-st.markdown("does financial loss lead to stock price drops ?")
+st.subheader("does financial loss lead to stock price drops ?")
 
 
 
@@ -164,7 +164,7 @@ fig17=px.bar(df,x='Attack_Type',y='Customer_Churn_Percent',
              template='plotly_dark'
 )
 st.plotly_chart(fig17)
-st.markdown("reveals which attack type customer away most. ")
+st.subheader("reveals which attack type customer away most. ")
 
 
 #reputation score changes by industry
@@ -175,5 +175,6 @@ fig18=px.bar(df, x='Industry',y='Reputation_Score_Change',
             template='plotly_dark'
 )
 st.plotly_chart(fig18)
-st.markdown("negative values = brand damage")
+st.subheader("negative values = brand damage")
+
 
